@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Global dimens -->
+    <dimen name="side_margin">16dp</dimen>
+    <dimen name="margin_between_elements">8dp</dimen>
+    <!-- StartFragment xml dimens -->
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="text_size_pancake_order">30sp</dimen>
+    <dimen name="imageButton_size">60dp</dimen>
+    <!-- PancakeCreatorFragment xml dimens -->
+    <dimen name="text_size_creator">30sp</dimen>
+    <dimen name="text_size_default">16sp</dimen>
+    <dimen name="text_size_normal_price">14sp</dimen>
+    <dimen name="text_size_quantity">20sp</dimen>
+    <dimen name="image_button_quantity_size">50sp</dimen>
+    <dimen name="quantity_counter_width">40dp</dimen>
+</resources>

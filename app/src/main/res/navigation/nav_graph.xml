@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_bottom_home">
+    <fragment
+        android:id="@+id/nav_bottom_home"
+        android:name="com.example.pancake.StartFragment"
+        android:label="@string/nav_bottom_home"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_pancakeCreatorFragment"
+            app:destination="@id/nav_bottom_creator" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_bottom_creator"
+        android:name="com.example.pancake.PancakeCreatorFragment"
+        android:label="@string/nav_bottom_creator"
+        tools:layout="@layout/fragment_pancake_creator">
+        <action
+            android:id="@+id/action_pancakeCreatorFragment_to_summaryOrderFragment"
+            app:destination="@id/nav_bottom_summary" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_bottom_summary"
+        android:name="com.example.pancake.SummaryOrderFragment"
+        android:label="@string/nav_bottom_summary"
+        tools:layout="@layout/fragment_summary_order" />
+</navigation>

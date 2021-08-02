@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ImageButton style -->
+    <style name="image_button" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="backgroundTint">@color/pancake</item>
+    </style>
+
+    <style name="image_button_minus" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="backgroundTint">@color/grey</item>
+    </style>
+
+    <style name="image_button_plus" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="backgroundTint">@color/red</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="button" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/pancake</item>
+    </style>
+
+
+    <style name="cancel_button" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="backgroundTint">@color/red</item>
+    </style>
+
+    <!-- Divider style -->
+    <style name="Divider" parent="">
+        <item name="android:background">?attr/dividerHorizontal</item>
+    </style>
+
+    <!-- Radio Button style -->
+    <style name="RadioButton" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/pancake</item>
+    </style>
+
+    <!-- Bottom Navigation style style -->
+    <style name="Bottom_Navigation" parent="Theme.MaterialComponents">
+        <item name="backgroundTint">@color/white</item>
+        <item name="itemIconTint">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="itemTextAppearanceInactive">@color/red</item>
+        <item name="itemTextAppearanceActive">@color/red</item>
+
+    </style>
+
+</resources>

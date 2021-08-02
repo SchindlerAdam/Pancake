@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.pancake.model.PancakeViewModel" />
+
+        <variable
+            name="panCakeCreatorFragment"
+            type="com.example.pancake.PancakeCreatorFragment" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/side_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:text="@string/creator"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_creator"
+                android:fontFamily="@font/baloo"
+                android:layout_gravity="center"/>
+
+            <View
+                android:id="@+id/divider0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                style="@style/Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements">
+
+                <TextView
+                    android:id="@+id/textview_select_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_between_elements"
+                    android:text="@string/select_type"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_default"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <RadioGroup
+                    android:id="@+id/type_options"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_select_type"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/type_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pancake_type_normal"
+                        android:textColor="@color/black"
+                        style = "@style/RadioButton"
+                        app:layout_constraintTop_toBottomOf="@+id/type_options"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:onClick="@{ () -> viewModel.setType(@string/pancake_type_normal)}"
+                        android:checked="@{viewModel.type.equals(@string/pancake_type_normal)}"/>
+
+                    <RadioButton
+                        android:id="@+id/type_american"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pancake_type_american"
+                        android:textColor="@color/black"
+                        style = "@style/RadioButton"
+                        app:layout_constraintTop_toBottomOf="@+id/type_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:onClick="@{ () -> viewModel.setType(@string/pancake_type_american)}"
+                        android:checked="@{viewModel.type.equals(@string/pancake_type_american)}"/>
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/textview_price_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_normal_type"
+                    android:textSize="@dimen/text_size_normal_price"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_select_type" />
+
+                <TextView
+                    android:id="@+id/textview_price_american"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_american_type"
+                    android:textSize="@dimen/text_size_normal_price"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_price_normal" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                style="@style/Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements">
+
+                <TextView
+                    android:id="@+id/textview_select_flavor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_between_elements"
+                    android:text="@string/select_flavor"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_default"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/flavor_options"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_between_elements"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_select_flavor">
+
+                    <RadioButton
+                        android:id="@+id/flavor_cocoa"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.flavor.equals(@string/flavor_cocoa)}"
+                        android:onClick="@{ () -> viewModel.setFlavor(@string/flavor_cocoa)}"
+                        android:text="@string/flavor_cocoa"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/flavor_options" />
+
+                    <RadioButton
+                        android:id="@+id/flavor_jam"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.flavor.equals(@string/flavor_jam)}"
+                        android:onClick="@{ () -> viewModel.setFlavor(@string/flavor_jam)}"
+                        android:text="@string/flavor_jam"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/flavor_cocoa" />
+
+                    <RadioButton
+                        android:id="@+id/flavor_cinnamon"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.flavor.equals(@string/flavor_cinnamon)}"
+                        android:onClick="@{ () -> viewModel.setFlavor(@string/flavor_cinnamon)}"
+                        android:text="@string/flavor_cinnamon"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/flavor_jam" />
+
+                    <RadioButton
+                        android:id="@+id/flavor_nutella"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.flavor.equals(@string/flavor_nutella)}"
+                        android:onClick="@{ () -> viewModel.setFlavor(@string/flavor_nutella)}"
+                        android:text="@string/flavor_nutella"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/flavor_cinnamon" />
+
+                    <RadioButton
+                        android:id="@+id/flavor_maple_syrup"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.flavor.equals(@string/flavor_maple_syrup)}"
+                        android:onClick="@{ () -> viewModel.setFlavor(@string/flavor_maple_syrup)}"
+                        android:text="@string/flavor_maple_syrup"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/flavor_nutella" />
+
+                    <RadioButton
+                        android:id="@+id/flavor_cottage_cheese"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.flavor.equals(@string/flavor_cottage_cheese)}"
+                        android:onClick="@{ () -> viewModel.setFlavor(@string/flavor_cottage_cheese)}"
+                        android:text="@string/flavor_cottage_cheese"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/flavor_maple_syrup" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textview_price_cocoa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_flavor_normal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/flavor_options" />
+
+                <TextView
+                    android:id="@+id/textview_price_jam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_flavor_normal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textview_price_cocoa" />
+
+                <TextView
+                    android:id="@+id/textview_price_cinnamon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_flavor_normal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textview_price_jam" />
+
+                <TextView
+                    android:id="@+id/textview_price_nutella"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_flavor_extra"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textview_price_cinnamon" />
+
+                <TextView
+                    android:id="@+id/textview_price_maple_syrup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_flavor_extra"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textview_price_nutella" />
+
+                <TextView
+                    android:id="@+id/textview_price_cottage_cheese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/price_flavor_extra"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textview_price_maple_syrup" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                style="@style/Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements">
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/button_add_to_cart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+
+                    <ImageButton
+                        android:id="@+id/imagebutton_minus"
+                        style="@style/image_button_minus"
+                        android:layout_width="@dimen/image_button_quantity_size"
+                        android:layout_height="@dimen/image_button_quantity_size"
+                        android:src="@drawable/ic_baseline_horizontal_rule_24"
+                        android:onClick="@{ () -> panCakeCreatorFragment.quantityMinus()}"
+                        android:contentDescription="@string/decrease_quantity" />
+
+                    <TextView
+                        android:layout_width="@dimen/quantity_counter_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@{viewModel.quantity.toString()}"
+                        android:textAlignment="center"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="@color/material_on_background_emphasis_high_type"
+                        android:textSize="@dimen/text_size_quantity" />
+
+                    <ImageButton
+                        android:id="@+id/imagebutton_plus"
+                        style="@style/image_button_plus"
+                        android:layout_width="@dimen/image_button_quantity_size"
+                        android:layout_height="@dimen/image_button_quantity_size"
+                        android:src="@drawable/ic_baseline_add_24"
+                        android:onClick="@{ () -> panCakeCreatorFragment.quantityPlus()}"
+                        android:contentDescription="@string/increase_quantity" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_add_to_cart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_add_to_cart"
+                    android:drawableLeft="@drawable/ic_cart"
+                    style="@style/button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="@{ () -> panCakeCreatorFragment.addToCart()}"/>
+
+                <Button
+                    android:id="@+id/send_order"
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/check_your_order"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button_add_to_cart"
+                    android:onClick="@{ () -> panCakeCreatorFragment.goToNextFragment()}"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:layout_marginBottom="@dimen/margin_between_elements"
+                style="@style/Divider" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

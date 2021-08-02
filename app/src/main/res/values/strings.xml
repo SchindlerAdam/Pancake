@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Pancake</string>
+    <string name="nav_bottom_home">Home</string>
+    <string name="nav_bottom_creator">Creator</string>
+    <string name="nav_bottom_summary">Cart</string>
+    <string name="pancake_order">Pancake Order!</string>
+    <string name="creator">PANCAKE CREATOR</string>
+    <string name="select_type">Select type</string>
+    <string name="pancake_type_normal">Normal</string>
+    <string name="pancake_type_american">American</string>
+    <string name="price_normal_type"> Price 3.00</string>
+    <string name="price_american_type"> Price 4.50</string>
+    <string name="price_flavor_normal"> Price 1.00</string>
+    <string name="price_flavor_extra"> Price 1.50</string>
+    <string name="select_flavor">Select flavor</string>
+    <string name="flavor_cocoa">Cocoa</string>
+    <string name="flavor_jam">Jam</string>
+    <string name="flavor_cinnamon">Cinnamon</string>
+    <string name="flavor_nutella">Nutella</string>
+    <string name="flavor_maple_syrup">Maple Syrup</string>
+    <string name="flavor_cottage_cheese">Cottage Cheese</string>
+    <string name="increase_quantity">Increase Quantity</string>
+    <string name="decrease_quantity">Decease Quantity</string>
+    <string name="select_quantity">Quantity</string>
+    <string name="button_add_to_cart">Add to cart</string>
+    <string name="check_your_order">Check your order</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="selected_type">Selected Pancake Type</string>
+    <string name="selected_flavor">Selected Flavor</string>
+    <string name="selected_quantity">Quantity</string>
+    <string name="select_pick_up_date">Pick up date</string>
+    <string name="selected_pick_up_date">Selected pick up date</string>
+    <string name="total_price">Total price: %s</string>
+    <string name="send">Send order with Email</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_message">Do you want to cancel the order?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="new_pancake_order">New pancake order</string>
+    <string name="thank_you">Thank you!</string>
+
+
+</resources>
